@@ -20,10 +20,10 @@ public class ServerThread extends Thread {
         player = new Player(this.hashCode(), socket);
         PlayerManager.getInstance().addPlayer(this.hashCode(), player);
         SendMessage.yourId(this.hashCode());
-        SendMessage.UpdateMatchList(this.hashCode());
+        SendMessage.UpdateMatchList(player);
     }
 
-    @Override
+
     public void run() {
         String info;
         InputStream is = null;

@@ -1,12 +1,15 @@
 package server.frame;
 
-import client.data.Data;
+import server.data.Data;
+import server.network.SendMessage;
 import server.network.ServerThread;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -20,7 +23,7 @@ public class ServerFrame extends JFrame {
     private DefaultListModel model_matches;
 
     private ServerFrame() {
-
+        super("Gobang Online [ Server ]");
         JScrollPane scrollPane_players = new JScrollPane();
         scrollPane_players.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane_players.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -40,6 +43,12 @@ public class ServerFrame extends JFrame {
         this.add(panel_matches, BorderLayout.EAST);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                SendMessage.serverOffline();
+                System.exit(0);
+            }
+        });
 
 
     }

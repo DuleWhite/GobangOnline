@@ -4,6 +4,8 @@ import client.data.Data;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GameFrame extends JFrame {
     private static GameFrame instance = null;
@@ -15,16 +17,17 @@ public class GameFrame extends JFrame {
     private JButton button_back;
 
     private GameFrame() {
-        label_opponent = new JLabel("waiting for join...",JLabel.CENTER);
-        label_switch = new JLabel("→",JLabel.CENTER);
-        JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")",JLabel.CENTER);
+        super("Gobang Online");
+        label_opponent = new JLabel("waiting for join...", JLabel.CENTER);
+        label_switch = new JLabel("→", JLabel.CENTER);
+        JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")", JLabel.CENTER);
         ChessBoardCanvas chessBoardCanvas = new ChessBoardCanvas();
         button_back = new JButton("Back");
         button_cheki = new JButton("Cheki");
         button_surrender = new JButton("Surrender");
         button_ready = new JButton("Ready");
 
-        JPanel top = new JPanel(new GridLayout(1,3,0,0));
+        JPanel top = new JPanel(new GridLayout(1, 3, 0, 0));
         top.add(label_opponent);
         top.add(label_switch);
         top.add(label_me);
@@ -38,6 +41,13 @@ public class GameFrame extends JFrame {
         this.add(chessBoardCanvas);
         this.add(foot, BorderLayout.SOUTH);
         this.pack();
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                //TODO:
+                System.exit(0);
+            }
+        });
+        this.setResizable(false);
     }
 
     public static GameFrame getInstance() {

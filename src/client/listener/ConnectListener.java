@@ -1,7 +1,7 @@
 package client.listener;
 
 import client.data.Data;
-import client.frame.CilentFrame;
+import client.frame.ClientFrame;
 import client.network.CilentTread;
 import client.network.Connection;
 import client.network.SendMessage;
@@ -12,19 +12,22 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class ConnectListener implements ActionListener {
-    @Override
+
     public void actionPerformed(ActionEvent e) {
-        Data.serverIp = CilentFrame.getInstance().getTextField_serverIp().getText();
-        Data.nickname = CilentFrame.getInstance().getTextField_nickname().getText();
-        if (Data.nickname.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nickname Cannot be empty!");
+        Data.serverIp = ClientFrame.getInstance().getTextField_serverIp().getText();
+        Data.nickname = ClientFrame.getInstance().getTextField_nickname().getText();
+        if (Data.nickname.contains("-") || Data.nickname.contains("&") || Data.nickname.contains(":") || Data.nickname.equals("")) {
+            JOptionPane.showMessageDialog(null, "Nickname cannot be Empty or contain '-','&' or ':'.");
         } else {
             try {
                 Connection.connect();
-                CilentFrame.getInstance().getTextField_serverIp().setEnabled(false);
-                CilentFrame.getInstance().getButton_connect().setEnabled(false);
-                CilentFrame.getInstance().getButton_disconnect().setEnabled(true);
-                CilentFrame.getInstance().getButton_refresh().setEnabled(true);
+                ClientFrame clientFrame = ClientFrame.getInstance();
+                clientFrame.getTextField_serverIp().setEnabled(false);
+                clientFrame.getButton_connect().setEnabled(false);
+                clientFrame.getButton_disconnect().setEnabled(true);
+                clientFrame.getButton_refresh().setEnabled(true);
+                clientFrame.getButton_createMatch().setEnabled(true);
+                clientFrame.getButton_join().setEnabled(true);
                 SendMessage.changeNickName(Data.nickname);
                 CilentTread cilentThread = new CilentTread();
                 cilentThread.start();

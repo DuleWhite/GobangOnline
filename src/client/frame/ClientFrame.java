@@ -1,10 +1,7 @@
 package client.frame;
 
 import client.data.Data;
-import client.listener.ChangeNicknameListener;
-import client.listener.ConnectListener;
-import client.listener.CreateNewMatchListener;
-import client.listener.DisconnectListener;
+import client.listener.*;
 import client.network.Connection;
 
 import javax.swing.*;
@@ -15,8 +12,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-public class CilentFrame extends JFrame {
-    private static CilentFrame instance = null;
+public class ClientFrame extends JFrame {
+    private static ClientFrame instance = null;
     private JTextField textField_serverIp;
     private JTextField textField_nickname;
     private JList list_matches = null;
@@ -26,8 +23,10 @@ public class CilentFrame extends JFrame {
     private JLabel label_myId2;
     private JButton button_refresh;
     private JButton button_changeNickname;
+    private JButton button_createMatch;
+    private JButton button_join;
 
-    private CilentFrame() {
+    private ClientFrame() {
         super("Gobang Online");
         JLabel label_serverIp = new JLabel("Server IP : ");
         JLabel label_nickName = new JLabel("Nickname : ");
@@ -42,6 +41,7 @@ public class CilentFrame extends JFrame {
         button_changeNickname.addActionListener(new ChangeNicknameListener());
         button_refresh = new JButton("Refresh");
         button_refresh.setEnabled(false);
+        button_refresh.addActionListener(new RefreshListener());
         JLabel label_myId = new JLabel("My ID: ");
         label_myId2 = new JLabel("");
         JScrollPane scrollPane_matches = new JScrollPane();
@@ -49,9 +49,12 @@ public class CilentFrame extends JFrame {
         scrollPane_matches.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane_matches.setViewportView(this.getList_matches());
         this.add(scrollPane_matches, BorderLayout.CENTER);
-        JButton button_createMatch = new JButton("Create new match");
+        button_createMatch = new JButton("Create new match");
+        button_createMatch.setEnabled(false);
         button_createMatch.addActionListener(new CreateNewMatchListener());
-        JButton button_quickJoin = new JButton("Quick Join");
+        button_join = new JButton("Join");
+        button_join.setEnabled(false);
+        button_join.addActionListener(new JoinListener());
 
         JPanel top = new JPanel(new GridLayout(3, 4, 0, 0));
         top.add(label_serverIp);
@@ -69,14 +72,14 @@ public class CilentFrame extends JFrame {
         mid.add(scrollPane_matches);
         JPanel foot = new JPanel(new GridLayout(1, 2, 0, 20));
         foot.add(button_createMatch);
-        foot.add(button_quickJoin);
+        foot.add(button_join);
         this.setLayout(new BorderLayout());
         this.add(top, BorderLayout.NORTH);
         this.add(mid, BorderLayout.CENTER);
         this.add(foot, BorderLayout.SOUTH);
         this.pack();
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
+        this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 if (Data.connected) {
                     try {
@@ -88,13 +91,22 @@ public class CilentFrame extends JFrame {
                 System.exit(0);
             }
         });
+        this.setResizable(false);
     }
 
-    public static CilentFrame getInstance() {
+    public static ClientFrame getInstance() {
         if (instance == null) {
-            instance = new CilentFrame();
+            instance = new ClientFrame();
         }
         return instance;
+    }
+
+    public JButton getButton_createMatch() {
+        return button_createMatch;
+    }
+
+    public JButton getButton_join() {
+        return button_join;
     }
 
     public JList getList_matches() {
