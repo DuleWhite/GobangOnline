@@ -1,4 +1,4 @@
-package cilent.manager;
+package client.manager;
 
 import java.io.*;
 

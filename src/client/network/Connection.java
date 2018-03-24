@@ -1,7 +1,7 @@
-package cilent.network;
+package client.network;
 
-import cilent.data.Data;
-import cilent.manager.IOManager;
+import client.data.Data;
+import client.manager.IOManager;
 
 import java.io.IOException;
 import java.net.Socket;

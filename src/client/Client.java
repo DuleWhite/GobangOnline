@@ -1,8 +1,8 @@
-package cilent;
+package client;
 
-import cilent.frame.CilentFrame;
+import client.frame.CilentFrame;
 
-public class Cilent {
+public class Client {
     public static void main(String[] args) {
         CilentFrame.getInstance().lunchFrame();
     }

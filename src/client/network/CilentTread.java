@@ -1,7 +1,7 @@
-package cilent.network;
+package client.network;
 
-import cilent.data.Data;
-import cilent.manager.IOManager;
+import client.data.Data;
+import client.manager.IOManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,8 +15,7 @@ public class CilentTread extends Thread {
             try {
                 info = br.readLine();
                 if (info != null)
-                    System.out.println("flag:::" + info);
-                ProcessRecivedMessage.process(info);
+                    ProcessRecivedMessage.process(info);
             } catch (IOException e) {
                 Data.connected = false;
                 e.printStackTrace();

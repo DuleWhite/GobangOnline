@@ -1,8 +1,8 @@
-package cilent.listener;
+package client.listener;
 
-import cilent.data.Data;
-import cilent.frame.CilentFrame;
-import cilent.network.Connection;
+import client.data.Data;
+import client.frame.CilentFrame;
+import client.network.Connection;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

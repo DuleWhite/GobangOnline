@@ -1,6 +1,6 @@
 package server.frame;
 
-import cilent.data.Data;
+import client.data.Data;
 import server.network.ServerThread;
 
 import javax.swing.*;

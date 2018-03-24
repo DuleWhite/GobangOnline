@@ -1,11 +1,11 @@
-package cilent.frame;
+package client.frame;
 
-import cilent.data.Data;
-import cilent.listener.ChangeNicknameListener;
-import cilent.listener.ConnectListener;
-import cilent.listener.CreateNewMatchListener;
-import cilent.listener.DisconnectListener;
-import cilent.network.Connection;
+import client.data.Data;
+import client.listener.ChangeNicknameListener;
+import client.listener.ConnectListener;
+import client.listener.CreateNewMatchListener;
+import client.listener.DisconnectListener;
+import client.network.Connection;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;

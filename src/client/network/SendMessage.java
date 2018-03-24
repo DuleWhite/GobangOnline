@@ -1,6 +1,6 @@
-package cilent.network;
+package client.network;
 
-import cilent.manager.IOManager;
+import client.manager.IOManager;
 
 public class SendMessage {
     public static void changeNickName(String nickname) {

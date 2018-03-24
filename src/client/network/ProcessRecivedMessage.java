@@ -1,7 +1,7 @@
-package cilent.network;
+package client.network;
 
-import cilent.data.Data;
-import cilent.frame.CilentFrame;
+import client.data.Data;
+import client.frame.CilentFrame;
 
 public class ProcessRecivedMessage {
     public static void process(String info) {
@@ -12,7 +12,6 @@ public class ProcessRecivedMessage {
         }
         if (info.substring(0, 5).equals("UPML:")) {
             CilentFrame.getInstance().getModel().clear();
-            System.out.println("flag::::" + info);
             String[] ss = info.substring(5).split("&");
             for (String s : ss) {
                 CilentFrame.getInstance().getModel().addElement(s);
