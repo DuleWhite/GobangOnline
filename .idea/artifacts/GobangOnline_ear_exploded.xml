@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ear" name="GobangOnline:ear exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/GobangOnline_ear_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="GobangOnline/javaeeApplication/javaEEApplication" />
-    </root>
-  </artifact>
-</component>

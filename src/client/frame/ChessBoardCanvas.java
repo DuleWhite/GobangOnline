@@ -14,12 +14,9 @@ public class ChessBoardCanvas extends Canvas {
      * 棋盘画板
      */
     private static final long serialVersionUID = 1L;
-
+    String sourcePath = null;
     private int MAP_WIDTH = 531;
     private int MAP_HEIGHT = 531;
-
-    String sourcePath = null;
-
     // 缓存图片
     BufferedImage chessBoardImage = new BufferedImage(MAP_WIDTH, MAP_HEIGHT, 1);
     Graphics2D g2 = chessBoardImage.createGraphics();
