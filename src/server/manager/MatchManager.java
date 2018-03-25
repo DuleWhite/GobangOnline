@@ -29,7 +29,7 @@ public class MatchManager {
         ServerFrame.getInstance().getList_matches().repaint();
     }
 
-    @Override
+
     public String toString() {
         StringBuilder temp = new StringBuilder();
         for (Match match : getMatches().values()) {

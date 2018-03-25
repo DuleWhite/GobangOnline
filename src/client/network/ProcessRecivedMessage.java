@@ -1,22 +1,35 @@
 package client.network;
 
 import client.data.Data;
-import client.frame.CilentFrame;
+import client.frame.ClientFrame;
+
+import javax.swing.*;
 
 public class ProcessRecivedMessage {
     public static void process(String info) {
-        if (info.substring(0, 5).equals("YRID:")) {
-            Data.myId = Integer.parseInt(info.substring(5));
-            CilentFrame.getInstance().getLabel_myId2().setText(String.valueOf(Data.myId));
-            //CilentFrame.getInstance().repaint();
+        String order = info.substring(0, 5);
+        String param = info.substring(5);
+        if (order.equals("YRID:")) {
+            Data.myId = Integer.parseInt(param);
+            ClientFrame.getInstance().getLabel_myId2().setText(String.valueOf(Data.myId));
         }
-        if (info.substring(0, 5).equals("UPML:")) {
-            CilentFrame.getInstance().getModel().clear();
-            String[] ss = info.substring(5).split("&");
+        if (order.equals("UPML:")) {
+            ClientFrame.getInstance().getModel().clear();
+            String[] ss = param.split("&");
             for (String s : ss) {
-                CilentFrame.getInstance().getModel().addElement(s);
+                ClientFrame.getInstance().getModel().addElement(s);
             }
-            CilentFrame.getInstance().getList_matches().repaint();
+            ClientFrame.getInstance().getList_matches().repaint();
+        }
+        if (order.equals("OFLN:")) {
+            JOptionPane.showMessageDialog(null, "Server Offline!");
+            System.exit(0);
+        }
+        if (order.equals("MCFL:")) {
+            JOptionPane.showMessageDialog(null, "Match is already has two player!");
+        }
+        if (order.equals("JNMC:")) {
+            //TODO:
         }
     }
 }

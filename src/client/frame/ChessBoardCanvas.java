@@ -32,7 +32,6 @@ public class ChessBoardCanvas extends Canvas {
     }
 
     // 重写paint
-    @Override
     public void paint(Graphics g) {
         g.drawImage(chessBoardImage, 0, 0, null);
     }

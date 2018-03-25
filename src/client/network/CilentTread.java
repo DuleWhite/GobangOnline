@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class CilentTread extends Thread {
-    @Override
+
     public void run() {
         BufferedReader br = IOManager.getInstance().getBr();
         String info = null;

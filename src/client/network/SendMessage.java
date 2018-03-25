@@ -14,4 +14,12 @@ public class SendMessage {
     public static void createMatch() {
         IOManager.getInstance().getPs().println("CRNM:");
     }
+
+    public static void refreshMatchList() {
+        IOManager.getInstance().getPs().println("RFML:");
+    }
+
+    public static void joinMatch(String matchId) {
+        IOManager.getInstance().getPs().println("JOIN:" + matchId);
+    }
 }

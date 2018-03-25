@@ -25,7 +25,7 @@ public class Match {
         return player1 == null || player2 == null;
     }
 
-    @Override
+
     public String toString() {
         StringBuilder temp = new StringBuilder();
         temp.append(getMatchId());
