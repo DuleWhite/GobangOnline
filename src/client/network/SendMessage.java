@@ -31,4 +31,22 @@ public class SendMessage {
         IOManager.getInstance().getPs().println("BACK:" + Data.matchId);
         //JOptionPane.showMessageDialog(null,"CLIENT:SENT:BACK"+Data.matchId);
     }
+
+    public static void ready(){
+        IOManager.getInstance().getPs().println("REDY:"+ Data.matchId);
+    }
+
+    public static void unready(){
+        IOManager.getInstance().getPs().println("UNRD:"+Data.matchId);
+    }
+
+    public static void playChess(int chessX, int chessY) {
+        String temp = "PLAY:" +
+                String.valueOf(Data.matchId) +
+                "-" +
+                chessX +
+                "-" +
+                chessY;
+        IOManager.getInstance().getPs().println(temp);
+    }
 }

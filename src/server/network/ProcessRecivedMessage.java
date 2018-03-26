@@ -59,6 +59,27 @@ public class ProcessRecivedMessage {
             }
             updateClientMatchList();
         }
+        if(order.equals("REDY:")){
+            player.setStatus(Player.ROOM_READY);
+            Match match = MatchManager.getInstance().getMatches().get(Integer.parseInt(param));
+            Player oppo = match.getOppo(String.valueOf(player.getPlayerId()));
+            SendMessage.oppoReady(oppo);
+            if(oppo.getStatus() == Player.ROOM_READY){
+                SendMessage.gameStart(match,match.getPlayer());
+                match.getPlayer().setStatus(Player.ROOM_INGAME);
+                match.getPlayer2().setStatus(Player.ROOM_INGAME);
+            }
+        }
+        if(order.equals("UNRD:")){
+            player.setStatus(Player.ROOM_UNREADY);
+            Match match = MatchManager.getInstance().getMatches().get(Integer.parseInt(param));
+            Player oppo = match.getOppo(String.valueOf(player.getPlayerId()));
+            SendMessage.oppoUnready(oppo);
+        }
+        if(order.equals("PLAY:")){
+            String[] ss = param.split("-");
+            SendMessage.oppoPlay(MatchManager.getInstance().getMatches().get(Integer.parseInt(ss[0])).getOppo(String.valueOf(player.getPlayerId())),ss[1],ss[2]);
+        }
     }
 
     private static void updateClientMatchList() {

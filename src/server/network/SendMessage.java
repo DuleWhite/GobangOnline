@@ -54,4 +54,21 @@ public class SendMessage {
     public static void ChallengerOut(Player player){
         Send(player,"CHOT:");
     }
+
+    public static void oppoReady(Player player) {
+        Send(player,"OPRD:");
+    }
+
+    public static void gameStart(Match match, Player player) {
+        Send(match.getPlayer(),"GSTR:" + player.getPlayerId());
+        Send(match.getPlayer2(),"GSTR:" + player.getPlayerId());
+    }
+
+    public static void oppoUnready(Player player) {
+        Send(player,"OPUR:");
+    }
+
+    public static void oppoPlay(Player player, String chessX, String chessY) {
+        Send(player,"OPPL:"+chessX+"-"+chessY);
+    }
 }

@@ -15,6 +15,16 @@ public class Match {
     public Player getPlayer() {
         return player1;
     }
+    public Player getPlayer2(){
+        return player2;
+    }
+
+    public Player getOppo(String playerId){
+        if(player1.getPlayerId() == Integer.parseInt(playerId)){
+            return player2;
+        }
+        else return player1;
+    }
 
     public boolean addPlayer(Player player) {
         if (player2 == null) {

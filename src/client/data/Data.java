@@ -13,6 +13,10 @@ public class Data {
     public static String opponentNickname = "";
     public static String matchId = "";
     public static boolean ready = false;
+    public static boolean started = false;
+    public static boolean myTurn = false;
+    public static int myChess = 0;
+    public static int oppoChess = 0;
     public static String serverIp = "";
     public static Socket socket = null;
     public static boolean connected = false;

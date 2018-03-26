@@ -2,6 +2,7 @@ package client.frame;
 
 import client.data.Data;
 import client.listener.BackListener;
+import client.listener.ReadyListener;
 import client.network.SendMessage;
 
 import javax.swing.*;
@@ -13,17 +14,33 @@ public class GameFrame extends JFrame {
     private static GameFrame instance = null;
     private JLabel label_opponent;
     private JLabel label_switch;
+    private JLabel label_oppoReady;
+    private JLabel label_Ready;
+
+    public JLabel getLabel_matchId() {
+        return label_matchId;
+    }
+
+    private JLabel label_matchId;
+
+    public ChessBoardCanvas getChessBoardCanvas() {
+        return chessBoardCanvas;
+    }
+
+    ChessBoardCanvas chessBoardCanvas;
     private JButton button_cheki;
     private JButton button_surrender;
     private JButton button_ready;
     private JButton button_back;
-
     private GameFrame() {
         super("Gobang Online");
-        label_opponent = new JLabel("Waiting for join...", JLabel.CENTER);
+        label_opponent = new JLabel("Waiting for join...", JLabel.RIGHT);
         label_switch = new JLabel("", JLabel.CENTER);
-        JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")", JLabel.CENTER);
-        ChessBoardCanvas chessBoardCanvas = new ChessBoardCanvas();
+        JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")", JLabel.LEFT);
+        label_oppoReady = new JLabel("",JLabel.RIGHT);
+        label_matchId = new JLabel("Match ID:",JLabel.CENTER);
+        label_Ready = new JLabel("",JLabel.LEFT);
+        chessBoardCanvas = new ChessBoardCanvas();
         button_back = new JButton("Back");
         button_back.addActionListener(new BackListener());
         button_cheki = new JButton("Cheki");
@@ -31,11 +48,15 @@ public class GameFrame extends JFrame {
         button_surrender = new JButton("Surrender");
         button_surrender.setEnabled(false);
         button_ready = new JButton("Ready");
+        button_ready.addActionListener(new ReadyListener());
 
-        JPanel top = new JPanel(new GridLayout(1, 3, 0, 0));
+        JPanel top = new JPanel(new GridLayout(2, 3, 0, 0));
         top.add(label_opponent);
         top.add(label_switch);
         top.add(label_me);
+        top.add(label_oppoReady);
+        top.add(label_matchId);
+        top.add(label_Ready);
         JPanel foot = new JPanel(new GridLayout(1, 4, 0, 0));
         foot.add(button_back);
         foot.add(button_cheki);
@@ -64,6 +85,14 @@ public class GameFrame extends JFrame {
             instance = new GameFrame();
         }
         return instance;
+    }
+
+    public JLabel getLabel_oppoReady() {
+        return label_oppoReady;
+    }
+
+    public JLabel getLabel_Ready() {
+        return label_Ready;
     }
 
     public JLabel getLabel_opponent() {
