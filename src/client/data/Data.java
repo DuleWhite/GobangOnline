@@ -10,6 +10,7 @@ public class Data {
     public static String nickname = "";
     public static int myId = 0;
     public static String opponentId = "";
+    public static String opponentNickname = "";
     public static String matchId = "";
     public static boolean ready = false;
     public static String serverIp = "";

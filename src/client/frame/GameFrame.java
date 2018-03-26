@@ -1,6 +1,8 @@
 package client.frame;
 
 import client.data.Data;
+import client.listener.BackListener;
+import client.network.SendMessage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,13 +20,16 @@ public class GameFrame extends JFrame {
 
     private GameFrame() {
         super("Gobang Online");
-        label_opponent = new JLabel("waiting for join...", JLabel.CENTER);
-        label_switch = new JLabel("→", JLabel.CENTER);
+        label_opponent = new JLabel("Waiting for join...", JLabel.CENTER);
+        label_switch = new JLabel("", JLabel.CENTER);
         JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")", JLabel.CENTER);
         ChessBoardCanvas chessBoardCanvas = new ChessBoardCanvas();
         button_back = new JButton("Back");
+        button_back.addActionListener(new BackListener());
         button_cheki = new JButton("Cheki");
+        button_cheki.setEnabled(false);
         button_surrender = new JButton("Surrender");
+        button_surrender.setEnabled(false);
         button_ready = new JButton("Ready");
 
         JPanel top = new JPanel(new GridLayout(1, 3, 0, 0));
@@ -43,8 +48,12 @@ public class GameFrame extends JFrame {
         this.pack();
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                //TODO:
-                System.exit(0);
+                SendMessage.backToMatchList();
+                Data.opponentNickname = "";
+                Data.opponentId = "";
+                Data.matchId = "";
+                GameFrame.getInstance().hideFrame();
+                ClientFrame.getInstance().lunchFrame();
             }
         });
         this.setResizable(false);

@@ -3,6 +3,7 @@ package server.manager;
 import server.entity.Match;
 import server.frame.ServerFrame;
 
+import javax.swing.*;
 import java.util.HashMap;
 
 public class MatchManager {
@@ -27,6 +28,13 @@ public class MatchManager {
         getMatches().put(match.getMatchId(), match);
         ServerFrame.getInstance().getModel_matches().addElement(match.getMatchId());
         ServerFrame.getInstance().getList_matches().repaint();
+    }
+
+    public void removeMatch(int matchId){
+        getMatches().remove(matchId);
+        ServerFrame.getInstance().getModel_matches().removeElement(matchId);
+        ServerFrame.getInstance().getList_matches().repaint();
+        //JOptionPane.showMessageDialog(null,"SERVER:MATCH REMOVED");
     }
 
 

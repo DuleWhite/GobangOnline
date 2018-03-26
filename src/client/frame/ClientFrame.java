@@ -82,11 +82,7 @@ public class ClientFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 if (Data.connected) {
-                    try {
-                        Connection.disconnect();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    Connection.disconnect();
                 }
                 System.exit(0);
             }

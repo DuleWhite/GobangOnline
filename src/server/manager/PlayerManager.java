@@ -3,6 +3,7 @@ package server.manager;
 import server.entity.Player;
 import server.frame.ServerFrame;
 
+import javax.swing.*;
 import java.util.HashMap;
 
 public class PlayerManager {
@@ -37,5 +38,6 @@ public class PlayerManager {
         getPlayers().remove(playerId);
         ServerFrame.getInstance().getModel_players().removeElement(playerId);
         ServerFrame.getInstance().getList_players().repaint();
+        //JOptionPane.showMessageDialog(null,"SERVER:PLAYER REMOVED:" + playerId);
     }
 }

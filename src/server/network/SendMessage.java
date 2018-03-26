@@ -1,9 +1,11 @@
 package server.network;
 
+import server.entity.Match;
 import server.entity.Player;
 import server.manager.MatchManager;
 import server.manager.PlayerManager;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintStream;
 
@@ -28,7 +30,7 @@ public class SendMessage {
 
     public static void serverOffline() {
         for (Player player : PlayerManager.getInstance().getPlayers().values()) {
-            Send(player, "OFLN:" + MatchManager.getInstance().toString());
+            Send(player, "OFLN:");
         }
     }
 
@@ -36,9 +38,20 @@ public class SendMessage {
         Send(player, "MCFL:");
     }
 
-    public static void joinMatch(Player player) {
-        //TODO:
-        Send(player, "JNMC:" + "Something");
+    public static void joinMatch(Player player, Match match) {
+        Send(player, "JNMC:" + match.toString2());
     }
 
+    public static void newChallenger(Player player1, Player player2){
+        Send(player1,"NWCH:"+player2.getNickname()+":"+player2.getPlayerId());
+    }
+
+    public static void yourMatchId(Player player, String matchId){
+        Send(player, "MCID:"+matchId);
+        //JOptionPane.showMessageDialog(null,"SERVER:SENT:MCID"+matchId);
+    }
+
+    public static void ChallengerOut(Player player){
+        Send(player,"CHOT:");
+    }
 }

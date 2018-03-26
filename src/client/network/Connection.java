@@ -15,7 +15,7 @@ public class Connection {
         IOManager.getInstance().getPs().println("NICK:" + Data.nickname);
     }
 
-    public static void disconnect() throws IOException {
+    public static void disconnect() {
         SendMessage.disconnect();
     }
 }
