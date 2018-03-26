@@ -45,6 +45,12 @@ public class Match {
 
     }
 
+    public void swapPlayer(){
+        Player temp = player1;
+        player1 = player2;
+        player2 = temp;
+    }
+
     public int getMatchId() {
         return matchId;
     }

@@ -71,4 +71,8 @@ public class SendMessage {
     public static void oppoPlay(Player player, String chessX, String chessY) {
         Send(player,"OPPL:"+chessX+"-"+chessY);
     }
+
+    public static void oppoSurrender(Player player){
+        Send(player,"OPSR:");
+    }
 }

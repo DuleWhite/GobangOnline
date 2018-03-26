@@ -11,6 +11,10 @@ import java.awt.event.ActionListener;
 public class BackListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(Data.ready){
+            Data.ready = false;
+            SendMessage.unready();
+        }
         SendMessage.backToMatchList();
         Data.opponentNickname = "";
         Data.opponentId = "";

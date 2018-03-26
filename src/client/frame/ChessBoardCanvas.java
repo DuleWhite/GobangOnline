@@ -38,77 +38,54 @@ public class ChessBoardCanvas extends Canvas {
         this.paintChess();
     }
 
-    public void paintBackground() {
+    private void paintBackground() {
 
         // 设置背景图片
         try {
             Image background = null;
             String path = this.getSourcePath() + "/src/client/images/map.png";
-            System.out.println(path);
             background = ImageIO.read(new File(path));
-
             g2.drawImage(background, 0, 0, null);
-
         } catch (IOException e1) {
-
-            // 手动画网格
             this.setBackground(new Color(210, 180, 140));
-
             g2.setColor(Color.black);
-
             for (int i = 0; i < 15; i++) {
                 g2.drawLine((35 * i + 20), 20, (35 * i + 20), 510);
             }
             for (int i = 0; i < 15; i++) {
                 g2.drawLine(20, (35 * i + 20), 510, (35 * i + 20));
             }
-            // 手动画标记点
             g2.fillRect(122, 122, 7, 7);
             g2.fillRect(402, 122, 7, 7);
             g2.fillRect(122, 402, 7, 7);
             g2.fillRect(402, 402, 7, 7);
             g2.fillRect(262, 262, 7, 7);
-
             e1.printStackTrace();
         }
     }
 
-    public void paintChess() {
-
+    private void paintChess() {
         Image black = null;
         BufferedImage white = null;
-
-        // 棋子
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 if (Data.chessBoard[i][j] == Data.BLACK) {
                     try {
-
-                        // 是否为最后一步棋
                         if (15 * j + i == Data.last) {
                             black = ImageIO.read(new File(this.getSourcePath()
                                     + "/src/client/images/black2.png"));
                         } else {
                             black = ImageIO.read(new File(this.getSourcePath()
                                     + "/src/client/images/black.png"));
-
                         }
-
                         g2.drawImage(black, i * 35 + 4, j * 35 + 4, null);
-
                     } catch (IOException e) {
-
-                        // 手动画
                         g2.fillOval(i * 35 + 4, j * 35 + 4, 33, 33);
-
                         e.printStackTrace();
                     }
                 } else {
                     if (Data.chessBoard[i][j] == Data.WHITE) {
-
                         try {
-
-                            // 是否为最后一步棋
                             if (15 * j + i == Data.last) {
                                 white = ImageIO.read(new File(this
                                         .getSourcePath()
@@ -118,9 +95,7 @@ public class ChessBoardCanvas extends Canvas {
                                         .getSourcePath()
                                         + "/src/client/images/white.png"));
                             }
-
                             g2.drawImage(white, i * 35 + 4, j * 35 + 4, null);
-
                         } catch (IOException e) {
 
                             // 手动画
@@ -132,16 +107,14 @@ public class ChessBoardCanvas extends Canvas {
                         }
                     }
                 }
-
             }
         }
     }
 
-    public String getSourcePath() {
+    private String getSourcePath() {
         if (sourcePath == null) {
             sourcePath = new File("").getAbsolutePath();
         }
-
         return sourcePath;
     }
 
@@ -149,7 +122,7 @@ public class ChessBoardCanvas extends Canvas {
         return MAP_WIDTH;
     }
 
-    public int getMapHeitht() {
+    public int getMapHeight() {
         return MAP_HEIGHT;
     }
 

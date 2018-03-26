@@ -72,6 +72,7 @@ public class ProcessRecivedMessage {
             GameFrame gameFrame = GameFrame.getInstance();
             gameFrame.getLabel_oppoReady().setText("");
             gameFrame.getLabel_Ready().setText("");
+            Data.ready = false;
             Data.started = true;
             if(param.contains(String.valueOf(Data.myId))){
                 gameFrame.getLabel_switch().setText("→");
@@ -86,6 +87,7 @@ public class ProcessRecivedMessage {
                 Data.oppoChess = Data.BLACK;
             }
             gameFrame.getButton_back().setEnabled(false);
+            gameFrame.getButton_ready().setText("Ready");
             gameFrame.getButton_ready().setEnabled(false);
             gameFrame.getButton_cheki().setEnabled(true);
             gameFrame.getButton_surrender().setEnabled(true);
@@ -97,11 +99,26 @@ public class ProcessRecivedMessage {
             String[] ss = param.split("-");
             int chessX = Integer.parseInt(ss[0]);
             int chessY = Integer.parseInt(ss[1]);
+            Data.last = 15 * chessY + chessX;
             Data.chessBoard[chessX][ chessY] = Data.oppoChess;
             ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
             mapCanvas.paintMapImage();
             mapCanvas.repaint();
             Data.myTurn = true;
+        }
+        if(order.equals("OPSR:")){
+            JOptionPane.showMessageDialog(null,"You win!");
+            Data.started = false;
+            Data.chessBoard = new int [15][15];
+            ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
+            mapCanvas.paintMapImage();
+            mapCanvas.repaint();
+            GameFrame gameFrame = GameFrame.getInstance();
+            gameFrame.getButton_back().setEnabled(true);
+            gameFrame.getButton_cheki().setEnabled(false);
+            gameFrame.getButton_surrender().setEnabled(false);
+            gameFrame.getButton_ready().setEnabled(true);
+            gameFrame.getLabel_switch().setText("");
         }
     }
 }

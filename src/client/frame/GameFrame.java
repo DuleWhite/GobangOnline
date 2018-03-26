@@ -3,6 +3,7 @@ package client.frame;
 import client.data.Data;
 import client.listener.BackListener;
 import client.listener.ReadyListener;
+import client.listener.SurrenderListener;
 import client.network.SendMessage;
 
 import javax.swing.*;
@@ -27,7 +28,7 @@ public class GameFrame extends JFrame {
         return chessBoardCanvas;
     }
 
-    ChessBoardCanvas chessBoardCanvas;
+    private ChessBoardCanvas chessBoardCanvas;
     private JButton button_cheki;
     private JButton button_surrender;
     private JButton button_ready;
@@ -47,6 +48,7 @@ public class GameFrame extends JFrame {
         button_cheki.setEnabled(false);
         button_surrender = new JButton("Surrender");
         button_surrender.setEnabled(false);
+        button_surrender.addActionListener(new SurrenderListener());
         button_ready = new JButton("Ready");
         button_ready.addActionListener(new ReadyListener());
 

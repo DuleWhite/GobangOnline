@@ -49,4 +49,8 @@ public class SendMessage {
                 chessY;
         IOManager.getInstance().getPs().println(temp);
     }
+
+    public static void surrender(){
+        IOManager.getInstance().getPs().println("SRND:"+Data.matchId);
+    }
 }

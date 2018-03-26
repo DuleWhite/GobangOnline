@@ -15,11 +15,12 @@ public class ChessBoardListener extends MouseAdapter {
         ChessBoardCanvas canvas = (ChessBoardCanvas)e.getSource();
         if(Data.started){
             if(Data.myTurn){
-                if(e.getX() < canvas.getMapWidth() - 6 && e.getY() < canvas.getHeight() - 7 ){
+                if(e.getX() < canvas.getMapWidth() - 6 && e.getY() < canvas.getMapHeight() - 7 ){
                     int chessX;
                     int chessY;
                     chessX = e.getX() / 35;
                     chessY = e.getY()/ 35;
+                    Data.last = 15 * chessY + chessX;
                     if(Data.chessBoard[chessX][chessY] == 0){
                         Data.chessBoard[chessX][ chessY] = Data.myChess;
                         ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();

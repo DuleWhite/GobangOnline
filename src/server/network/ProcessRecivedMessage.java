@@ -80,6 +80,12 @@ public class ProcessRecivedMessage {
             String[] ss = param.split("-");
             SendMessage.oppoPlay(MatchManager.getInstance().getMatches().get(Integer.parseInt(ss[0])).getOppo(String.valueOf(player.getPlayerId())),ss[1],ss[2]);
         }
+        if(order.equals("SRND:")){
+            Match match = MatchManager.getInstance().getMatches().get(Integer.parseInt(param));
+            Player oppo = match.getOppo(String.valueOf(player.getPlayerId()));
+            SendMessage.oppoSurrender(oppo);
+            match.swapPlayer();
+        }
     }
 
     private static void updateClientMatchList() {
