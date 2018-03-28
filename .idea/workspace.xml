@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5b68508-ecae-4f3b-8a26-c1a56bc97c5c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lineCount.txt" afterPath="$PROJECT_DIR$/lineCount.txt" />
-      <change beforePath="$PROJECT_DIR$/src/client/data/Data.java" afterPath="$PROJECT_DIR$/src/client/data/Data.java" />
-      <change beforePath="$PROJECT_DIR$/src/client/frame/GameFrame.java" afterPath="$PROJECT_DIR$/src/client/frame/GameFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/client/listener/CreateNewMatchListener.java" afterPath="$PROJECT_DIR$/src/client/listener/CreateNewMatchListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/client/listener/JoinListener.java" afterPath="$PROJECT_DIR$/src/client/listener/JoinListener.java" />
       <change beforePath="$PROJECT_DIR$/src/client/network/ProcessRecivedMessage.java" afterPath="$PROJECT_DIR$/src/client/network/ProcessRecivedMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/client/network/SendMessage.java" afterPath="$PROJECT_DIR$/src/client/network/SendMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/server/entity/ChessPosation.java" afterPath="$PROJECT_DIR$/src/server/entity/ChessPosation.java" />
       <change beforePath="$PROJECT_DIR$/src/server/entity/Match.java" afterPath="$PROJECT_DIR$/src/server/entity/Match.java" />
       <change beforePath="$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java" afterPath="$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java" />
       <change beforePath="$PROJECT_DIR$/src/server/network/SendMessage.java" afterPath="$PROJECT_DIR$/src/server/network/SendMessage.java" />
@@ -33,7 +26,7 @@
       <file leaf-file-name="ProcessRecivedMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
+            <state relative-caret-position="619">
               <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
               <folding />
             </state>
@@ -50,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessRecivedMessage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProcessRecivedMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/network/ProcessRecivedMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="179" column="56" lean-forward="true" selection-start-line="179" selection-start-column="56" selection-end-line="179" selection-end-column="56" />
+            <state relative-caret-position="223">
+              <caret line="170" column="44" lean-forward="false" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/network/SendMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="566">
-              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+              <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="e#1854#1855#0" expanded="true" />
                 <element signature="e#1933#1934#0" expanded="true" />
@@ -77,26 +70,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SurrenderListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/listener/SurrenderListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SendMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/network/SendMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="593">
-              <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+              <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
               <folding>
                 <element signature="e#2794#2795#0" expanded="true" />
-                <element signature="e#2830#2831#0" expanded="true" />
-                <element signature="e#2879#2880#0" expanded="true" />
-                <element signature="e#2915#2916#0" expanded="true" />
+                <element signature="e#2831#2832#0" expanded="true" />
+                <element signature="e#2880#2881#0" expanded="true" />
+                <element signature="e#2917#2918#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,6 +90,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChessBoardCanvas.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/frame/ChessBoardCanvas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -136,7 +129,7 @@
         <entry file="file://$PROJECT_DIR$/src/server/entity/Match.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -195,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/server/data/Data.java" />
         <option value="$PROJECT_DIR$/src/server/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/server/entity/ChessPosation.java" />
-        <option value="$PROJECT_DIR$/src/client/frame/ChessBoardCanvas.java" />
         <option value="$PROJECT_DIR$/src/client/network/SendMessage.java" />
         <option value="$PROJECT_DIR$/src/client/listener/ChekiListener.java" />
         <option value="$PROJECT_DIR$/src/client/frame/GameFrame.java" />
@@ -204,10 +196,11 @@
         <option value="$PROJECT_DIR$/src/server/entity/Match.java" />
         <option value="$PROJECT_DIR$/src/client/listener/JoinListener.java" />
         <option value="$PROJECT_DIR$/src/server/network/SendMessage.java" />
-        <option value="$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java" />
         <option value="$PROJECT_DIR$/src/client/data/Data.java" />
         <option value="$PROJECT_DIR$/src/client/listener/CreateNewMatchListener.java" />
         <option value="$PROJECT_DIR$/src/client/network/ProcessRecivedMessage.java" />
+        <option value="$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java" />
+        <option value="$PROJECT_DIR$/src/client/frame/ChessBoardCanvas.java" />
       </list>
     </option>
   </component>
@@ -217,9 +210,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="564" />
+    <option name="y" value="52" />
+    <option name="width" value="1153" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -534,16 +529,15 @@
       <workItem from="1521938801624" duration="11737000" />
       <workItem from="1522056715016" duration="14471000" />
       <workItem from="1522078744742" duration="15578000" />
-      <workItem from="1522231573474" duration="6655000" />
+      <workItem from="1522231573474" duration="7009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56318000" />
+    <option name="totallyTimeSpent" value="56672000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="564" y="52" width="1153" height="1028" extended-state="1" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -557,15 +551,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845187" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.294" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27281553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29393306" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15104167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25151777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -765,14 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/frame/ChessBoardCanvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/entity/ChessPosation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -797,7 +783,7 @@
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,8 +793,8 @@
         <state relative-caret-position="462">
           <caret line="79" column="8" lean-forward="false" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="69" />
           <folding>
-            <element signature="e#5137#5138#0" expanded="true" />
-            <element signature="e#5174#5175#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="false" />
+            <element signature="e#5174#5175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,28 +804,28 @@
         <state relative-caret-position="382">
           <caret line="69" column="19" lean-forward="false" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
           <folding>
-            <element signature="e#3287#3288#0" expanded="true" />
-            <element signature="e#3323#3324#0" expanded="true" />
-            <element signature="e#3376#3377#0" expanded="true" />
-            <element signature="e#3415#3416#0" expanded="true" />
-            <element signature="e#3457#3458#0" expanded="true" />
-            <element signature="e#3495#3496#0" expanded="true" />
-            <element signature="e#3533#3534#0" expanded="true" />
-            <element signature="e#3567#3568#0" expanded="true" />
-            <element signature="e#3608#3609#0" expanded="true" />
-            <element signature="e#3645#3646#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
-            <element signature="e#3759#3760#0" expanded="true" />
-            <element signature="e#3794#3795#0" expanded="true" />
-            <element signature="e#3838#3839#0" expanded="true" />
-            <element signature="e#3877#3878#0" expanded="true" />
-            <element signature="e#3917#3918#0" expanded="true" />
-            <element signature="e#3952#3953#0" expanded="true" />
-            <element signature="e#3991#3992#0" expanded="true" />
-            <element signature="e#4025#4026#0" expanded="true" />
-            <element signature="e#4318#4319#0" expanded="true" />
-            <element signature="e#4356#4357#0" expanded="true" />
+            <element signature="e#3287#3288#0" expanded="false" />
+            <element signature="e#3323#3324#0" expanded="false" />
+            <element signature="e#3376#3377#0" expanded="false" />
+            <element signature="e#3415#3416#0" expanded="false" />
+            <element signature="e#3457#3458#0" expanded="false" />
+            <element signature="e#3495#3496#0" expanded="false" />
+            <element signature="e#3533#3534#0" expanded="false" />
+            <element signature="e#3567#3568#0" expanded="false" />
+            <element signature="e#3608#3609#0" expanded="false" />
+            <element signature="e#3645#3646#0" expanded="false" />
+            <element signature="e#3684#3685#0" expanded="false" />
+            <element signature="e#3719#3720#0" expanded="false" />
+            <element signature="e#3759#3760#0" expanded="false" />
+            <element signature="e#3794#3795#0" expanded="false" />
+            <element signature="e#3838#3839#0" expanded="false" />
+            <element signature="e#3877#3878#0" expanded="false" />
+            <element signature="e#3917#3918#0" expanded="false" />
+            <element signature="e#3952#3953#0" expanded="false" />
+            <element signature="e#3991#3992#0" expanded="false" />
+            <element signature="e#4025#4026#0" expanded="false" />
+            <element signature="e#4318#4319#0" expanded="false" />
+            <element signature="e#4356#4357#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -857,9 +843,9 @@
         <state relative-caret-position="595">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+            <element signature="e#1598#1599#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,7 +869,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/listener/SurrenderListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -899,7 +885,7 @@
     <entry file="file://$PROJECT_DIR$/src/server/entity/Match.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -907,21 +893,13 @@
     <entry file="file://$PROJECT_DIR$/src/server/network/SendMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
-          <caret line="100" column="29" lean-forward="false" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <caret line="100" column="30" lean-forward="false" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
           <folding>
             <element signature="e#2794#2795#0" expanded="true" />
-            <element signature="e#2830#2831#0" expanded="true" />
-            <element signature="e#2879#2880#0" expanded="true" />
-            <element signature="e#2915#2916#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+            <element signature="e#2880#2881#0" expanded="true" />
+            <element signature="e#2917#2918#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +930,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/network/SendMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="e#1854#1855#0" expanded="true" />
             <element signature="e#1933#1934#0" expanded="true" />
@@ -964,11 +942,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/network/ProcessRecivedMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="179" column="56" lean-forward="true" selection-start-line="179" selection-start-column="56" selection-end-line="179" selection-end-column="56" />
+        <state relative-caret-position="223">
+          <caret line="170" column="44" lean-forward="false" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/network/ProcessRecivedMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/frame/ChessBoardCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
