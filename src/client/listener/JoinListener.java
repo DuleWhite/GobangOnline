@@ -17,6 +17,5 @@ public class JoinListener implements ActionListener {
         } catch (NullPointerException er) {
             JOptionPane.showMessageDialog(null, "You have not selected any match to join.");
         }
-
     }
 }

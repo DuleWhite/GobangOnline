@@ -5,12 +5,9 @@ import client.listener.BackListener;
 import client.listener.ChekiListener;
 import client.listener.ReadyListener;
 import client.listener.SurrenderListener;
-import client.network.SendMessage;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class GameFrame extends JFrame {
     private static GameFrame instance = null;

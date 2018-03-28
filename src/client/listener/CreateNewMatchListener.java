@@ -12,6 +12,7 @@ public class CreateNewMatchListener implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Data.resetRoomStatus();
+        Data.opponentNickname = "";
         ClientFrame.getInstance().hideFrame();
         GameFrame.getInstance().launchFrame();
         SendMessage.createMatch();

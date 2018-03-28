@@ -24,7 +24,8 @@ public class Data {
     public static int oppoChess = 0;
     public static int last = -1;
     public static int[][] chessBoard = new int[15][15];
-    public static void resetRoomStatus(){
+
+    public static void resetRoomStatus() {
         ready = false;
         started = false;
         myTurn = false;

@@ -75,21 +75,29 @@ public class SendMessage {
         Send(player, "OPSR:");
     }
 
-    public static void oppoRequestCheki(Player player){
-        Send(player,"OPCK:");
+    public static void oppoRequestCheki(Player player) {
+        Send(player, "OPCK:");
     }
 
-    public static void chekiComfirm(Player player){
-        Send(player,"CKCO:");
+    public static void chekiComfirm(Player player) {
+        Send(player, "CKCO:");
     }
 
     public static void chekiMessage(Player player, String del, String last) {
         System.out.println("Server Sent Cheki2");
-        Send(player,"CKMS:"+del+"-"+last);
+        Send(player, "CKMS:" + del + "-" + last);
     }
 
     public static void chekiRefused(Player player) {
         System.out.println("Server Sent Cheki refuse");
         Send(player, "CKRF:");
+    }
+
+    public static void youWin(Player player) {
+        Send(player,"UWIN:");
+    }
+
+    public static void youLose(Player player) {
+        Send(player,"ULOS:");
     }
 }

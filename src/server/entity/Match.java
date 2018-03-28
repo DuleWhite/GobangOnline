@@ -6,9 +6,19 @@ import server.network.SendMessage;
 import java.util.Stack;
 
 public class Match {
+    public boolean started = false;
     private int matchId;
     private Player player1;
     private Player player2 = null;
+    private int turn = 0;
+    private Stack<ChessPosation> history;
+    public int[][] chessBoard = new int[15][15];
+
+    public Match(Player player) {
+        this.player1 = player;
+        player1.setChessType(Data.BLACK);
+        this.matchId = this.hashCode();
+    }
 
     public int getTurn() {
         return turn;
@@ -16,16 +26,6 @@ public class Match {
 
     public void setTurn(int turn) {
         this.turn = turn;
-    }
-
-    private int turn = 0;
-    public boolean started = false;
-    private Stack<ChessPosation> history;
-
-    public Match(Player player) {
-        this.player1 = player;
-        player1.setChessType(Data.BLACK);
-        this.matchId = this.hashCode();
     }
 
     public Stack<ChessPosation> getHistory() {

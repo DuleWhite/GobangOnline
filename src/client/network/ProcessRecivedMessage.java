@@ -32,9 +32,9 @@ public class ProcessRecivedMessage {
             //JOptionPane.showMessageDialog(null,"CLIENT:RECIVED:MCID"+param);
             System.out.println("Client (" + Data.myId + ") Recived Match ID : " + param);
             Data.matchId = param;
-            System.out.println("Data.matchId set : " + Data.matchId );
+            System.out.println("Data.matchId set : " + Data.matchId);
             String temp = "Match ID:" + param;
-            System.out.println("temp:"+temp);
+            System.out.println("temp:" + temp);
             GameFrame.getInstance().getLabel_matchId().setText(temp);
             GameFrame.getInstance().repaint();
             System.out.println("GameFrame MatchID set : " + GameFrame.getInstance().getLabel_matchId().getText());
@@ -60,7 +60,7 @@ public class ProcessRecivedMessage {
             GameFrame.getInstance().getLabel_opponent().setText(Data.opponentNickname + "(" + Data.opponentId + ")");
         }
         if (order.equals("NWCH:")) {
-            System.out.println("Client Recived NWCH:"+param);
+            System.out.println("Client Recived NWCH:" + param);
             String[] ss = param.split(":");
             Data.opponentNickname = ss[0];
             Data.opponentId = ss[1];
@@ -136,7 +136,7 @@ public class ProcessRecivedMessage {
                 SendMessage.refuseCkeki();
             }
         }
-        if(order.equals("CKCO:")){
+        if (order.equals("CKCO:")) {
             System.out.println("Client Recived CKCO:");
             Data.myTurn = true;
         }
@@ -153,9 +153,35 @@ public class ProcessRecivedMessage {
             mapCanvas.paintMapImage();
             mapCanvas.repaint();
         }
-        if(order.equals("CKRF:")){
+        if (order.equals("CKRF:")) {
             System.out.println("Client Recived CKRF:");
-            JOptionPane.showMessageDialog(null,"Opponent Do not allow your Cheki!");
+            JOptionPane.showMessageDialog(null, "Opponent Do not allow your Cheki!");
+        }
+        if(order.equals("UWIN:")){
+            JOptionPane.showMessageDialog(null,"You Win");
+            Data.resetRoomStatus();
+            ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
+            mapCanvas.paintMapImage();
+            mapCanvas.repaint();
+            GameFrame gameFrame = GameFrame.getInstance();
+            gameFrame.getButton_back().setEnabled(true);
+            gameFrame.getButton_cheki().setEnabled(false);
+            gameFrame.getButton_surrender().setEnabled(false);
+            gameFrame.getButton_ready().setEnabled(true);
+            gameFrame.getLabel_switch().setText("");
+        }
+        if(order.equals("ULOS:")){
+            JOptionPane.showMessageDialog(null,"You Lose");
+            Data.resetRoomStatus();
+            ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
+            mapCanvas.paintMapImage();
+            mapCanvas.repaint();
+            GameFrame gameFrame = GameFrame.getInstance();
+            gameFrame.getButton_back().setEnabled(true);
+            gameFrame.getButton_cheki().setEnabled(false);
+            gameFrame.getButton_surrender().setEnabled(false);
+            gameFrame.getButton_ready().setEnabled(true);
+            gameFrame.getLabel_switch().setText("");
         }
     }
 }

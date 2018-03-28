@@ -27,7 +27,7 @@ public class SendMessage {
 
     public static void backToMatchList() {
         IOManager.getInstance().getPs().println("BACK:" + Data.matchId);
-        System.out.println("Client Sent BACK:"+Data.matchId);
+        System.out.println("Client Sent BACK:" + Data.matchId);
         //JOptionPane.showMessageDialog(null,"CLIENT:SENT:BACK"+Data.matchId);
     }
 
