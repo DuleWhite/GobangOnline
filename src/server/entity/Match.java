@@ -1,54 +1,79 @@
 package server.entity;
 
+import server.data.Data;
 import server.network.SendMessage;
+
+import java.util.Stack;
 
 public class Match {
     private int matchId;
-    private Player player1 = null;
+    private Player player1;
     private Player player2 = null;
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    private int turn = 0;
+    public boolean started = false;
+    private Stack<ChessPosation> history;
 
     public Match(Player player) {
         this.player1 = player;
+        player1.setChessType(Data.BLACK);
         this.matchId = this.hashCode();
+    }
+
+    public Stack<ChessPosation> getHistory() {
+        if (history == null) {
+            history = new Stack<>();
+        }
+        return history;
     }
 
     public Player getPlayer() {
         return player1;
     }
-    public Player getPlayer2(){
+
+    public Player getPlayer2() {
         return player2;
     }
 
-    public Player getOppo(String playerId){
-        if(player1.getPlayerId() == Integer.parseInt(playerId)){
+    public Player getOppo(String playerId) {
+        if (player1.getPlayerId() == Integer.parseInt(playerId)) {
             return player2;
-        }
-        else return player1;
+        } else return player1;
     }
 
     public boolean addPlayer(Player player) {
         if (player2 == null) {
             player2 = player;
-            SendMessage.newChallenger(player1,player2);
+            player2.setChessType(Data.WHITE);
+            SendMessage.newChallenger(player1, player2);
             return true;
         }
         return false;
     }
 
-    public void removePlayer(int playerId){
-        if(player1.getPlayerId() == playerId){
+    public void removePlayer(int playerId) {
+        if (player1.getPlayerId() == playerId) {
             player1 = null;
             player1 = player2;
             player2 = null;
-        }
-        else player2 = null;
+        } else player2 = null;
 
     }
 
-    public void swapPlayer(){
+    public void swapPlayer() {
         Player temp = player1;
         player1 = player2;
         player2 = temp;
+        player1.setChessType(Data.BLACK);
+        player2.setChessType(Data.WHITE);
     }
 
     public int getMatchId() {
@@ -69,7 +94,7 @@ public class Match {
         return temp.toString();
     }
 
-    public String toString2(){
+    public String toString2() {
         return getMatchId() +
                 "-" +
                 player1.getNickname() +

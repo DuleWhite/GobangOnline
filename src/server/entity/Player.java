@@ -12,12 +12,21 @@ public class Player {
     private int playerId = 0;
     private String nickname = "";
     private int status = OUT_OF_ROOM;
+    private int chessType = 0;
 
     public Player(int playerId, Socket socket) {
         this.playerId = playerId;
         this.socket = socket;
         this.connected = true;
         this.status = OUT_OF_ROOM;
+    }
+
+    public int getChessType() {
+        return chessType;
+    }
+
+    public void setChessType(int chessType) {
+        this.chessType = chessType;
     }
 
     public Socket getSocket() {

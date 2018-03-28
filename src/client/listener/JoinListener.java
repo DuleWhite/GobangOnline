@@ -14,8 +14,8 @@ public class JoinListener implements ActionListener {
             String matchId = ClientFrame.getInstance().getList_matches().getSelectedValue().toString();
             matchId = matchId.split(":")[0];
             SendMessage.joinMatch(matchId);
-        }catch (NullPointerException er){
-            JOptionPane.showMessageDialog(null,"You have not selected any match to join.");
+        } catch (NullPointerException er) {
+            JOptionPane.showMessageDialog(null, "You have not selected any match to join.");
         }
 
     }

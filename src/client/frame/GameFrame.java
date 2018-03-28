@@ -2,6 +2,7 @@ package client.frame;
 
 import client.data.Data;
 import client.listener.BackListener;
+import client.listener.ChekiListener;
 import client.listener.ReadyListener;
 import client.listener.SurrenderListener;
 import client.network.SendMessage;
@@ -17,35 +18,27 @@ public class GameFrame extends JFrame {
     private JLabel label_switch;
     private JLabel label_oppoReady;
     private JLabel label_Ready;
-
-    public JLabel getLabel_matchId() {
-        return label_matchId;
-    }
-
     private JLabel label_matchId;
-
-    public ChessBoardCanvas getChessBoardCanvas() {
-        return chessBoardCanvas;
-    }
-
     private ChessBoardCanvas chessBoardCanvas;
     private JButton button_cheki;
     private JButton button_surrender;
     private JButton button_ready;
     private JButton button_back;
+
     private GameFrame() {
         super("Gobang Online");
         label_opponent = new JLabel("Waiting for join...", JLabel.RIGHT);
         label_switch = new JLabel("", JLabel.CENTER);
         JLabel label_me = new JLabel(Data.nickname + "(" + Data.myId + ")", JLabel.LEFT);
-        label_oppoReady = new JLabel("",JLabel.RIGHT);
-        label_matchId = new JLabel("Match ID:",JLabel.CENTER);
-        label_Ready = new JLabel("",JLabel.LEFT);
+        label_oppoReady = new JLabel("", JLabel.RIGHT);
+        label_matchId = new JLabel("Match ID:", JLabel.CENTER);
+        label_Ready = new JLabel("", JLabel.LEFT);
         chessBoardCanvas = new ChessBoardCanvas();
         button_back = new JButton("Back");
         button_back.addActionListener(new BackListener());
         button_cheki = new JButton("Cheki");
         button_cheki.setEnabled(false);
+        button_cheki.addActionListener(new ChekiListener());
         button_surrender = new JButton("Surrender");
         button_surrender.setEnabled(false);
         button_surrender.addActionListener(new SurrenderListener());
@@ -69,8 +62,16 @@ public class GameFrame extends JFrame {
         this.add(chessBoardCanvas);
         this.add(foot, BorderLayout.SOUTH);
         this.pack();
-        this.addWindowListener(new WindowAdapter() {
+        this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        /*this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                if(Data.started){
+                    Data.started = false;
+                    SendMessage.surrender();
+                }
+                if(Data.ready){
+                    Data.ready=false;
+                }
                 SendMessage.backToMatchList();
                 Data.opponentNickname = "";
                 Data.opponentId = "";
@@ -78,7 +79,7 @@ public class GameFrame extends JFrame {
                 GameFrame.getInstance().hideFrame();
                 ClientFrame.getInstance().lunchFrame();
             }
-        });
+        });*/
         this.setResizable(false);
     }
 
@@ -87,6 +88,14 @@ public class GameFrame extends JFrame {
             instance = new GameFrame();
         }
         return instance;
+    }
+
+    public JLabel getLabel_matchId() {
+        return label_matchId;
+    }
+
+    public ChessBoardCanvas getChessBoardCanvas() {
+        return chessBoardCanvas;
     }
 
     public JLabel getLabel_oppoReady() {
@@ -122,6 +131,11 @@ public class GameFrame extends JFrame {
     }
 
     public void launchFrame() {
+        label_Ready.setText("");
+        chessBoardCanvas.repaint();
+        button_cheki.setEnabled(false);
+        button_surrender.setEnabled(false);
+        button_ready.setText("Ready");
         this.setVisible(true);
     }
 

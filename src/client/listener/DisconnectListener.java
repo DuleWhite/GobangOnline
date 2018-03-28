@@ -4,10 +4,8 @@ import client.data.Data;
 import client.frame.ClientFrame;
 import client.network.Connection;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class DisconnectListener implements ActionListener {
 

@@ -5,7 +5,6 @@ import server.entity.Player;
 import server.manager.MatchManager;
 import server.manager.PlayerManager;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintStream;
 
@@ -42,37 +41,55 @@ public class SendMessage {
         Send(player, "JNMC:" + match.toString2());
     }
 
-    public static void newChallenger(Player player1, Player player2){
-        Send(player1,"NWCH:"+player2.getNickname()+":"+player2.getPlayerId());
+    public static void newChallenger(Player player1, Player player2) {
+        Send(player1, "NWCH:" + player2.getNickname() + ":" + player2.getPlayerId());
     }
 
-    public static void yourMatchId(Player player, String matchId){
-        Send(player, "MCID:"+matchId);
+    public static void yourMatchId(Player player, String matchId) {
+        Send(player, "MCID:" + matchId);
         //JOptionPane.showMessageDialog(null,"SERVER:SENT:MCID"+matchId);
     }
 
-    public static void ChallengerOut(Player player){
-        Send(player,"CHOT:");
+    public static void ChallengerOut(Player player) {
+        Send(player, "CHOT:");
     }
 
     public static void oppoReady(Player player) {
-        Send(player,"OPRD:");
+        Send(player, "OPRD:");
     }
 
     public static void gameStart(Match match, Player player) {
-        Send(match.getPlayer(),"GSTR:" + player.getPlayerId());
-        Send(match.getPlayer2(),"GSTR:" + player.getPlayerId());
+        Send(match.getPlayer(), "GSTR:" + player.getPlayerId());
+        Send(match.getPlayer2(), "GSTR:" + player.getPlayerId());
     }
 
     public static void oppoUnready(Player player) {
-        Send(player,"OPUR:");
+        Send(player, "OPUR:");
     }
 
     public static void oppoPlay(Player player, String chessX, String chessY) {
-        Send(player,"OPPL:"+chessX+"-"+chessY);
+        Send(player, "OPPL:" + chessX + "-" + chessY);
     }
 
-    public static void oppoSurrender(Player player){
-        Send(player,"OPSR:");
+    public static void oppoSurrender(Player player) {
+        Send(player, "OPSR:");
+    }
+
+    public static void oppoRequestCheki(Player player){
+        Send(player,"OPCK:");
+    }
+
+    public static void chekiComfirm(Player player){
+        Send(player,"CKCO:");
+    }
+
+    public static void chekiMessage(Player player, String del, String last) {
+        System.out.println("Server Sent Cheki2");
+        Send(player,"CKMS:"+del+"-"+last);
+    }
+
+    public static void chekiRefused(Player player) {
+        System.out.println("Server Sent Cheki refuse");
+        Send(player, "CKRF:");
     }
 }

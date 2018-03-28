@@ -9,14 +9,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SurrenderListener implements ActionListener{
+public class SurrenderListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         SendMessage.surrender();
-        JOptionPane.showMessageDialog(null,"You lose!");
+        JOptionPane.showMessageDialog(null, "You lose!");
         Data.last = -1;
         Data.started = false;
-        Data.chessBoard = new int [15][15];
+        Data.chessBoard = new int[15][15];
         ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
         mapCanvas.paintMapImage();
         mapCanvas.repaint();

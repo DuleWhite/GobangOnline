@@ -3,8 +3,6 @@ package client.network;
 import client.data.Data;
 import client.manager.IOManager;
 
-import javax.swing.*;
-
 public class SendMessage {
     public static void changeNickName(String nickname) {
         IOManager.getInstance().getPs().println("NICK:" + nickname);
@@ -27,17 +25,18 @@ public class SendMessage {
         IOManager.getInstance().getPs().println("JOIN:" + matchId);
     }
 
-    public static void backToMatchList(){
+    public static void backToMatchList() {
         IOManager.getInstance().getPs().println("BACK:" + Data.matchId);
+        System.out.println("Client Sent BACK:"+Data.matchId);
         //JOptionPane.showMessageDialog(null,"CLIENT:SENT:BACK"+Data.matchId);
     }
 
-    public static void ready(){
-        IOManager.getInstance().getPs().println("REDY:"+ Data.matchId);
+    public static void ready() {
+        IOManager.getInstance().getPs().println("REDY:" + Data.matchId);
     }
 
-    public static void unready(){
-        IOManager.getInstance().getPs().println("UNRD:"+Data.matchId);
+    public static void unready() {
+        IOManager.getInstance().getPs().println("UNRD:" + Data.matchId);
     }
 
     public static void playChess(int chessX, int chessY) {
@@ -50,7 +49,20 @@ public class SendMessage {
         IOManager.getInstance().getPs().println(temp);
     }
 
-    public static void surrender(){
-        IOManager.getInstance().getPs().println("SRND:"+Data.matchId);
+    public static void surrender() {
+        IOManager.getInstance().getPs().println("SRND:" + Data.matchId);
+    }
+
+    public static void cheki() {
+        IOManager.getInstance().getPs().println("CHKI:" + Data.matchId);
+        System.out.println("Client Sent Cheki");
+    }
+
+    public static void allowCheki() {
+        IOManager.getInstance().getPs().println("ALCK:" + Data.matchId);
+    }
+
+    public static void refuseCkeki() {
+        IOManager.getInstance().getPs().println("RFCK:" + Data.matchId);
     }
 }

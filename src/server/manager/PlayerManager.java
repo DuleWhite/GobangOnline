@@ -3,7 +3,6 @@ package server.manager;
 import server.entity.Player;
 import server.frame.ServerFrame;
 
-import javax.swing.*;
 import java.util.HashMap;
 
 public class PlayerManager {
