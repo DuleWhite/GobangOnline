@@ -33,7 +33,6 @@ public class MatchManager {
         getMatches().remove(matchId);
         ServerFrame.getInstance().getModel_matches().removeElement(matchId);
         ServerFrame.getInstance().getList_matches().repaint();
-        //JOptionPane.showMessageDialog(null,"SERVER:MATCH REMOVED");
     }
 
 

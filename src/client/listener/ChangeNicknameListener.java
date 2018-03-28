@@ -18,8 +18,9 @@ public class ChangeNicknameListener implements ActionListener {
                 if (Data.connected) {
                     SendMessage.changeNickName(Data.nickname);
                 }
-                JOptionPane.showMessageDialog(null, "Change Nickname success!");
-            } else JOptionPane.showMessageDialog(null, "Nickname cannot be Empty or contain '-','&' or ':'.");
+                JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Change Nickname success!");
+            } else
+                JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Nickname cannot be Empty or contain '-','&' or ':'.");
         }
     }
 }

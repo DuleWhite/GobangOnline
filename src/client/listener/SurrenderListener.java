@@ -13,7 +13,7 @@ public class SurrenderListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         SendMessage.surrender();
-        JOptionPane.showMessageDialog(null, "You lose!");
+        JOptionPane.showMessageDialog(GameFrame.getInstance(), "You lose!");
         Data.last = -1;
         Data.started = false;
         Data.chessBoard = new int[15][15];

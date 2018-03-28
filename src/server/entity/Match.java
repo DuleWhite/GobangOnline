@@ -7,25 +7,17 @@ import java.util.Stack;
 
 public class Match {
     public boolean started = false;
+    public int[][] chessBoard = new int[15][15];
     private int matchId;
     private Player player1;
     private Player player2 = null;
     private int turn = 0;
     private Stack<ChessPosation> history;
-    public int[][] chessBoard = new int[15][15];
 
     public Match(Player player) {
         this.player1 = player;
         player1.setChessType(Data.BLACK);
         this.matchId = this.hashCode();
-    }
-
-    public int getTurn() {
-        return turn;
-    }
-
-    public void setTurn(int turn) {
-        this.turn = turn;
     }
 
     public Stack<ChessPosation> getHistory() {
@@ -104,5 +96,13 @@ public class Match {
                 player2.getNickname() +
                 ":" +
                 player2.getPlayerId();
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
     }
 }

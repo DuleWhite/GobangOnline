@@ -47,7 +47,6 @@ public class SendMessage {
 
     public static void yourMatchId(Player player, String matchId) {
         Send(player, "MCID:" + matchId);
-        //JOptionPane.showMessageDialog(null,"SERVER:SENT:MCID"+matchId);
     }
 
     public static void ChallengerOut(Player player) {
@@ -84,20 +83,18 @@ public class SendMessage {
     }
 
     public static void chekiMessage(Player player, String del, String last) {
-        System.out.println("Server Sent Cheki2");
         Send(player, "CKMS:" + del + "-" + last);
     }
 
     public static void chekiRefused(Player player) {
-        System.out.println("Server Sent Cheki refuse");
         Send(player, "CKRF:");
     }
 
     public static void youWin(Player player) {
-        Send(player,"UWIN:");
+        Send(player, "UWIN:");
     }
 
     public static void youLose(Player player) {
-        Send(player,"ULOS:");
+        Send(player, "ULOS:");
     }
 }

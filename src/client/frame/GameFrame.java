@@ -60,24 +60,10 @@ public class GameFrame extends JFrame {
         this.add(foot, BorderLayout.SOUTH);
         this.pack();
         this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        /*this.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                if(Data.started){
-                    Data.started = false;
-                    SendMessage.surrender();
-                }
-                if(Data.ready){
-                    Data.ready=false;
-                }
-                SendMessage.backToMatchList();
-                Data.opponentNickname = "";
-                Data.opponentId = "";
-                Data.matchId = "";
-                GameFrame.getInstance().hideFrame();
-                ClientFrame.getInstance().lunchFrame();
-            }
-        });*/
         this.setResizable(false);
+        int w = ClientFrame.getInstance().getLocation().x-50;
+        int h = ClientFrame.getInstance().getLocation().y-100;
+        this.setLocation(w,h);
     }
 
     public static GameFrame getInstance() {
@@ -133,6 +119,9 @@ public class GameFrame extends JFrame {
         button_cheki.setEnabled(false);
         button_surrender.setEnabled(false);
         button_ready.setText("Ready");
+        int w = ClientFrame.getInstance().getLocation().x-50;
+        int h = ClientFrame.getInstance().getLocation().y-100;
+        this.setLocation(w,h);
         this.setVisible(true);
     }
 
