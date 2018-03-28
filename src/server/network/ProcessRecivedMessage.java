@@ -133,7 +133,6 @@ public class ProcessRecivedMessage {
 
     private static boolean checkWin(int x, int y, int chessType, int[][] chessBoard) {
         int winPoint[] = new int[4];
-
         winPoint[0] = checkX(x, y, chessType, chessBoard);
         winPoint[1] = checkY(x, y, chessType, chessBoard);
         winPoint[2] = checkM(x, y, chessType, chessBoard);
@@ -148,36 +147,24 @@ public class ProcessRecivedMessage {
         int check;
         int checkLeft = 0;
         int checkRight = 0;
-
         for (int i = 0; i < 5; i++) {
-
             if (line - i > -1) {
-
                 if (chessBoard[line - i][row] == chessType) {
-
                     checkLeft++;
                 } else {
-
                     break;
                 }
             }
-
         }
-
         for (int i = 1; i < 5; i++) {
-
             if (line + i < 15) {
-
                 if (chessBoard[line + i][row] == chessType) {
-
                     checkRight++;
                 } else {
                     break;
                 }
             }
-
         }
-
         check = checkLeft + checkRight;
         return (check);
     }
@@ -186,34 +173,23 @@ public class ProcessRecivedMessage {
         int check;
         int checkLeft = 0;
         int checkRight = 0;
-
         for (int i = 0; i < 5; i++) {
-
             if (row - i >= 0) {
-
                 if (chessBoard[line][row - i] == chessType) {
-
                     checkLeft++;
                 } else {
-
                     break;
                 }
             }
-
         }
-
         for (int i = 1; i < 5; i++) {
-
             if (row + i < 15) {
-
                 if (chessBoard[line][row + i] == chessType) {
-
                     checkRight++;
                 } else {
                     break;
                 }
             }
-
         }
         check = checkLeft + checkRight;
         return (check);
@@ -223,36 +199,24 @@ public class ProcessRecivedMessage {
         int check;
         int checkLeft = 0;
         int checkRight = 0;
-
         for (int i = 0; i < 5; i++) {
-
             if ((line - i > -1) && (row - i > -1)) {
-
                 if (chessBoard[line - i][row - i] == chessType) {
-
                     checkLeft++;
                 } else {
-
                     break;
                 }
             }
-
         }
-
         for (int i = 1; i < 5; i++) {
-
             if ((line + i < 15) && (row + i < 15)) {
-
                 if (chessBoard[line + i][row + i] == chessType) {
-
                     checkRight++;
                 } else {
                     break;
                 }
             }
-
         }
-
         check = checkLeft + checkRight;
         return (check);
     }
@@ -261,36 +225,25 @@ public class ProcessRecivedMessage {
         int check;
         int checkLeft = 0;
         int checkRight = 0;
-
         for (int i = 0; i < 5; i++) {
-
             if ((line - i > -1) && (row + i < 15)) {
-
                 if (chessBoard[line - i][row + i] == chessType) {
-
                     checkLeft++;
                 } else {
-
                     break;
                 }
             }
-
         }
 
         for (int i = 1; i < 5; i++) {
-
             if ((line + i < 15) && (row - i > -1)) {
-
                 if (chessBoard[line + i][row - i] == chessType) {
-
                     checkRight++;
                 } else {
                     break;
                 }
             }
-
         }
-
         check = checkLeft + checkRight;
         return (check);
     }
