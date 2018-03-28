@@ -14,15 +14,15 @@ public class ChessBoardCanvas extends Canvas {
      * 棋盘画板
      */
     private static final long serialVersionUID = 1L;
-    String sourcePath = null;
+    private String sourcePath = null;
     private int MAP_WIDTH = 531;
     private int MAP_HEIGHT = 531;
     // 缓存图片
-    BufferedImage chessBoardImage = new BufferedImage(MAP_WIDTH, MAP_HEIGHT, 1);
-    Graphics2D g2 = chessBoardImage.createGraphics();
+    private BufferedImage chessBoardImage = new BufferedImage(MAP_WIDTH, MAP_HEIGHT, 1);
+    private Graphics2D g2 = chessBoardImage.createGraphics();
 
     // 构造函数
-    public ChessBoardCanvas() {
+    ChessBoardCanvas() {
         this.paintMapImage();
         this.setSize(MAP_WIDTH, MAP_HEIGHT);
         this.addMouseListener(new ChessBoardListener());
@@ -42,7 +42,7 @@ public class ChessBoardCanvas extends Canvas {
 
         // 设置背景图片
         try {
-            Image background = null;
+            Image background;
             String path = this.getSourcePath() + "/src/client/images/map.png";
             background = ImageIO.read(new File(path));
             g2.drawImage(background, 0, 0, null);
@@ -65,8 +65,8 @@ public class ChessBoardCanvas extends Canvas {
     }
 
     private void paintChess() {
-        Image black = null;
-        BufferedImage white = null;
+        Image black;
+        BufferedImage white;
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 if (Data.chessBoard[i][j] == Data.BLACK) {

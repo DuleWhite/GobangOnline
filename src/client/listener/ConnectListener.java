@@ -17,7 +17,7 @@ public class ConnectListener implements ActionListener {
         Data.serverIp = ClientFrame.getInstance().getTextField_serverIp().getText();
         Data.nickname = ClientFrame.getInstance().getTextField_nickname().getText();
         if (Data.nickname.contains("-") || Data.nickname.contains("&") || Data.nickname.contains(":") || Data.nickname.equals("")) {
-            JOptionPane.showMessageDialog(null, "Nickname cannot be Empty or contain '-','&' or ':'.");
+            JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Nickname cannot be Empty or contain '-','&' or ':'.");
         } else {
             try {
                 Connection.connect();
@@ -32,7 +32,7 @@ public class ConnectListener implements ActionListener {
                 CilentTread cilentThread = new CilentTread();
                 cilentThread.start();
             } catch (IOException e1) {
-                JOptionPane.showMessageDialog(null, "Server Not Found！");
+                JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Server Not Found！");
                 e1.printStackTrace();
             }
         }

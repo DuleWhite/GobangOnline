@@ -11,14 +11,6 @@ public class ChessPosation {
         this.chessY = chessY;
     }
 
-    public Integer getChessX() {
-        return chessX;
-    }
-
-    public Integer getChessY() {
-        return chessY;
-    }
-
     @Override
     public String toString() {
         return chessX + "," + chessY;

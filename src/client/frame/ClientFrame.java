@@ -21,7 +21,6 @@ public class ClientFrame extends JFrame {
     private JButton button_disconnect;
     private JLabel label_myId2;
     private JButton button_refresh;
-    private JButton button_changeNickname;
     private JButton button_createMatch;
     private JButton button_join;
 
@@ -36,7 +35,7 @@ public class ClientFrame extends JFrame {
         button_disconnect = new JButton("Disconnect");
         button_disconnect.setEnabled(false);
         button_disconnect.addActionListener(new DisconnectListener());
-        button_changeNickname = new JButton("Change");
+        JButton button_changeNickname = new JButton("Change");
         button_changeNickname.addActionListener(new ChangeNicknameListener());
         button_refresh = new JButton("Refresh");
         button_refresh.setEnabled(false);
@@ -87,6 +86,9 @@ public class ClientFrame extends JFrame {
             }
         });
         this.setResizable(false);
+        int w = (Toolkit.getDefaultToolkit().getScreenSize().width-500) / 2;
+        int h = (Toolkit.getDefaultToolkit().getScreenSize().height-400) / 2;
+        this.setLocation(w,h);
     }
 
     public static ClientFrame getInstance() {
@@ -142,10 +144,6 @@ public class ClientFrame extends JFrame {
 
     public JLabel getLabel_myId2() {
         return label_myId2;
-    }
-
-    public JButton getButton_changeNickname() {
-        return button_changeNickname;
     }
 
     public void lunchFrame() {

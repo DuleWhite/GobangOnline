@@ -7,11 +7,11 @@ public class Player {
     public static final int ROOM_UNREADY = 0xb01;
     public static final int ROOM_READY = 0xc01;
     public static final int ROOM_INGAME = 0xd01;
-    public boolean connected = false;
-    private Socket socket = null;
-    private int playerId = 0;
+    public boolean connected;
+    private Socket socket;
+    private int playerId;
     private String nickname = "";
-    private int status = OUT_OF_ROOM;
+    private int status;
     private int chessType = 0;
 
     public Player(int playerId, Socket socket) {
@@ -33,16 +33,8 @@ public class Player {
         return socket;
     }
 
-    public void setSocket(Socket socket) {
-        this.socket = socket;
-    }
-
     public int getPlayerId() {
         return playerId;
-    }
-
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
     }
 
     public String getNickname() {

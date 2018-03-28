@@ -1,5 +1,6 @@
 package server.frame;
 
+import client.frame.ClientFrame;
 import server.data.Data;
 import server.network.SendMessage;
 import server.network.ServerThread;
@@ -100,7 +101,7 @@ public class ServerFrame extends JFrame {
             ss = new ServerSocket(Data.port);
             System.out.println("Server Start！");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Port " + Data.port + " used !");
+            JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Port " + Data.port + " used !");
             e.printStackTrace();
             System.exit(0);
         }

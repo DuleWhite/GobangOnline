@@ -10,7 +10,7 @@ public class CilentTread extends Thread {
 
     public void run() {
         BufferedReader br = IOManager.getInstance().getBr();
-        String info = null;
+        String info;
         while (Data.connected) {
             try {
                 info = br.readLine();

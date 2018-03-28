@@ -10,7 +10,6 @@ public class SendMessage {
 
     public static void disconnect() {
         IOManager.getInstance().getPs().println("DSCN:");
-        //JOptionPane.showMessageDialog(null,"CLIENT:SENT:DSCN");
     }
 
     public static void createMatch() {
@@ -27,8 +26,6 @@ public class SendMessage {
 
     public static void backToMatchList() {
         IOManager.getInstance().getPs().println("BACK:" + Data.matchId);
-        System.out.println("Client Sent BACK:" + Data.matchId);
-        //JOptionPane.showMessageDialog(null,"CLIENT:SENT:BACK"+Data.matchId);
     }
 
     public static void ready() {
@@ -55,7 +52,6 @@ public class SendMessage {
 
     public static void cheki() {
         IOManager.getInstance().getPs().println("CHKI:" + Data.matchId);
-        System.out.println("Client Sent Cheki");
     }
 
     public static void allowCheki() {

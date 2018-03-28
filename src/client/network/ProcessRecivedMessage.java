@@ -16,7 +16,6 @@ public class ProcessRecivedMessage {
             ClientFrame.getInstance().getLabel_myId2().setText(String.valueOf(Data.myId));
         }
         if (order.equals("UPML:")) {
-            //JOptionPane.showMessageDialog(null,"CLIENT:RECIVED:UPML");
             ClientFrame.getInstance().getModel().clear();
             String[] ss = param.split("&");
             for (String s : ss) {
@@ -29,19 +28,13 @@ public class ProcessRecivedMessage {
             System.exit(0);
         }
         if (order.equals("MCID:")) {
-            //JOptionPane.showMessageDialog(null,"CLIENT:RECIVED:MCID"+param);
-            System.out.println("Client (" + Data.myId + ") Recived Match ID : " + param);
             Data.matchId = param;
-            System.out.println("Data.matchId set : " + Data.matchId);
             String temp = "Match ID:" + param;
-            System.out.println("temp:" + temp);
             GameFrame.getInstance().getLabel_matchId().setText(temp);
             GameFrame.getInstance().repaint();
-            System.out.println("GameFrame MatchID set : " + GameFrame.getInstance().getLabel_matchId().getText());
-            //JOptionPane.showMessageDialog(null,"DATA.MATCHID:"+Data.matchId);
         }
         if (order.equals("MCFL:")) {
-            JOptionPane.showMessageDialog(null, "Match is already has two player!");
+            JOptionPane.showMessageDialog(ClientFrame.getInstance(), "Match is already has two player!");
         }
         if (order.equals("JNMC:")) {
             Data.resetRoomStatus();
@@ -60,7 +53,6 @@ public class ProcessRecivedMessage {
             GameFrame.getInstance().getLabel_opponent().setText(Data.opponentNickname + "(" + Data.opponentId + ")");
         }
         if (order.equals("NWCH:")) {
-            System.out.println("Client Recived NWCH:" + param);
             String[] ss = param.split(":");
             Data.opponentNickname = ss[0];
             Data.opponentId = ss[1];
@@ -115,7 +107,7 @@ public class ProcessRecivedMessage {
             GameFrame.getInstance().getButton_cheki().setEnabled(false);
         }
         if (order.equals("OPSR:")) {
-            JOptionPane.showMessageDialog(null, "You win!");
+            JOptionPane.showMessageDialog(GameFrame.getInstance(), "You win!");
             Data.resetRoomStatus();
             ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
             mapCanvas.paintMapImage();
@@ -137,11 +129,9 @@ public class ProcessRecivedMessage {
             }
         }
         if (order.equals("CKCO:")) {
-            System.out.println("Client Recived CKCO:");
             Data.myTurn = true;
         }
         if (order.equals("CKMS:")) {
-            System.out.println("Client Recived CKMS:");
             String[] ss = param.split("-");
             int delx = Integer.parseInt(ss[0].split(",")[0]);
             int dely = Integer.parseInt(ss[0].split(",")[1]);
@@ -154,11 +144,10 @@ public class ProcessRecivedMessage {
             mapCanvas.repaint();
         }
         if (order.equals("CKRF:")) {
-            System.out.println("Client Recived CKRF:");
-            JOptionPane.showMessageDialog(null, "Opponent Do not allow your Cheki!");
+            JOptionPane.showMessageDialog(GameFrame.getInstance(), "Opponent Do not allow your Cheki!");
         }
-        if(order.equals("UWIN:")){
-            JOptionPane.showMessageDialog(null,"You Win");
+        if (order.equals("UWIN:")) {
+            JOptionPane.showMessageDialog(GameFrame.getInstance(), "You Win");
             Data.resetRoomStatus();
             ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
             mapCanvas.paintMapImage();
@@ -170,8 +159,8 @@ public class ProcessRecivedMessage {
             gameFrame.getButton_ready().setEnabled(true);
             gameFrame.getLabel_switch().setText("");
         }
-        if(order.equals("ULOS:")){
-            JOptionPane.showMessageDialog(null,"You Lose");
+        if (order.equals("ULOS:")) {
+            JOptionPane.showMessageDialog(GameFrame.getInstance(), "You Lose");
             Data.resetRoomStatus();
             ChessBoardCanvas mapCanvas = GameFrame.getInstance().getChessBoardCanvas();
             mapCanvas.paintMapImage();
